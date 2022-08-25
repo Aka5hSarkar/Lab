@@ -11,7 +11,7 @@ public class Pyramid {
 			for (int j=5;j>i;j--) { //inner for loop to print the spaces
 				System.out.print(" ");
 			}
-			for (int n=1;n<=i;n++) { //inner for loop to print the st
+			for (int n=1;n<=i;n++) { //inner for loop to print the stars
 				System.out.print("* ");
 			}System.out.println();
 		}}}
