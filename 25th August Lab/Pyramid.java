@@ -8,7 +8,7 @@ public class Pyramid {
 		System.out.print("enter number of rows : ");
 		int r=sc.nextInt();//taking input from user about how many rows the pyramid will have 
 		for (int i=1;i<=r;i++) { //outer for loop condition for rows 
-			for (int j=5;j>i;j--) { //inner for loop to print the spaces
+			for (int j=r;j>i;j--) { //inner for loop to print the spaces
 				System.out.print(" ");
 			}
 			for (int n=1;n<=i;n++) { //inner for loop to print the stars
