@@ -12,5 +12,6 @@ class Test1{
 	public static void main(String[] args) {
 	Test t=new Test();/*The default constructor of the test class 
 	                    is not visible from this class 
-	                    because its private constructor*/
+	                    because its private constructor.so 
+			    we can't create any object of the test class*/
 }}
