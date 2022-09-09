@@ -1,3 +1,6 @@
+/*java program to create employee object without using new keyword
+take 5 input as id & name*/
+
 package Lab;
 
 public class Employee {
