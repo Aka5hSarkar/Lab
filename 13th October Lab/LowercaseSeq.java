@@ -1,3 +1,5 @@
+//Q3.Write a Java program to find sequences of lowercase letters joined with a underscore
+
 package lab13October;
 
 import java.util.Scanner;
