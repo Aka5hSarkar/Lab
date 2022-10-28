@@ -18,14 +18,15 @@ public class ExceptionProduct {
 	public static void main(String[] args) throws Exception{
 		Scanner sc=new Scanner(System.in);
 		System.out.println("Enter first number : ");
-		int x=sc.nextInt();
+		int x=sc.nextInt();//input
 		System.out.println("Enter second number");
-		int y=sc.nextInt();
-		if (x>=-20 && y<=20) {
+		int y=sc.nextInt();//input
+		if (x>=-20 && y<=20) {//constraints condition
+			//try catch block to handle the exceptions
 			try {
-				if (x<0 || y<0) {
+				if (x<0 || y<0) {//if any number is negetive exception will be thrown
 					throw new Exception(" x and y should not be less than zero");
-				}else {
+				}else {//if both numbers are positive they will be multiplied
 					System.out.println("Product of the numbers : "+x*y);
 				}
 			}catch (Exception e) {
