@@ -10,27 +10,29 @@ executed in a try/catch/finally segments.*/
 package lab28thOctober;
 import java.util.Scanner;
 public class ExceptionAdd {
+	//static method to add two positive integers which throws ArithmeticException
 	static void addTwoIntegers(int a,int b) throws ArithmeticException{
+		//try catch block to handle exceptions
 		try {
-			if(a<0 || b<0) {
+			if(a<0 || b<0) {//if any number is negetive ArithmeticException will be thrown
 				throw new ArithmeticException("Non-positive integers sent");
-			}else {
+			}else {//if both numbers are positive numbers will be added
 				System.out.println("sum : "+(a+b));
 			}
 		}catch (Exception e) {
 				System.out.println(e.getMessage());
 			}
-		finally {
+		finally {//finally block
 			System.out.println("Finally block will execute in all cases.");
 		}
 	}
 	public static void main(String[] args) {
 		Scanner sc=new Scanner(System.in);
 		System.out.println("Enter first number : ");
-		int a=sc.nextInt();
+		int a=sc.nextInt();//taking input
 		System.out.println("Enter second number : ");
-		int b=sc.nextInt();
-		addTwoIntegers(a, b);
+		int b=sc.nextInt();//taking input
+		addTwoIntegers(a, b);//calling the method
 	}
 
 }
