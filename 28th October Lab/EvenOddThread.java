@@ -32,6 +32,7 @@ public class EvenOddThread {
 		e.setPriority(Thread.MAX_PRIORITY);//even numbers with maximum priority
 		o.setPriority(Thread.MIN_PRIORITY);//odd numbers with minimum priority
 		e.start();
+		//handling exception with try catch block
 		try {
 			e.sleep(1);
 		} catch (InterruptedException e1) {
