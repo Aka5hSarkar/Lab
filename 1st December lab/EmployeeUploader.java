@@ -7,6 +7,16 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.*;
 import dec_1st_lab.*;
+class ID_Not_Found_Exception extends Exception{
+	ID_Not_Found_Exception(String str){
+		super(str);
+	}
+}
+class InvalidSalaryException extends Exception{
+	InvalidSalaryException(String str){
+		super(str);
+	}
+}
 public class EmployeeUploader {
 	Scanner sc=new Scanner(System.in);
 	//saving department details
