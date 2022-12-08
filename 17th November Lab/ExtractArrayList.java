@@ -1,4 +1,4 @@
-//Problem Statement 2:Write a Java program to extract a portion of an array list.
+//Problem Statement 3:Write a Java program to extract a portion of an array list.
 package lab17November;
 import java.util.*;
 public class ExtractArrayList {
