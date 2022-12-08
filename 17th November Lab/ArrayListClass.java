@@ -1,4 +1,4 @@
-/*Problem Statement 1:
+/*Problem Statement 2:
 1. Develop a java class with a method storeEvenNumbers(int N) using ArrayList to store
 even numbers from 2 to N, where N is a integer which is passed as a parameter to the
 method storeEvenNumbers(). The method should return the ArrayList (A1) created.
