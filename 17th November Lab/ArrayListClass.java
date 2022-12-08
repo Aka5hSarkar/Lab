@@ -18,17 +18,17 @@ public class ArrayListClass {
 	static ArrayList<Integer> arr2=new ArrayList<Integer>();//List 2
 	//method to store even numbers in arr1
 	static ArrayList<Integer> storeEvenNumbers(int N) {
-		for(int i=2;i<=N;i++) {
+		for(int i=2;i<=N;i++) {//for loop for iteration
 			if(i%2==0) {
-				arr1.add(i);
+				arr1.add(i);//adding elements in the arraylist
 			}
-		}return arr1;
+		}return arr1;//returning the arraylist
 	}
 	//method to multiply even numbers with 2 and store in arr2
 	static ArrayList<Integer>  printEvenNumbers(){
 		for(int i=0;i<arr1.size();i++) {
-			arr2.add(arr1.get(i)*2);
-		}return arr2;
+			arr2.add(arr1.get(i)*2);//adding elements to the 2nd arraylist
+		}return arr2;//returning the 2nd arraylist
 	}
 	//method to search a specific number
 	static int  retrieveEvenNumber(int N) {
