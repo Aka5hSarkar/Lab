@@ -1,4 +1,4 @@
-//Problem Statement 3:Write a Java program to compare two array lists.
+//Problem Statement 4:Write a Java program to compare two array lists.
 package lab17November;
 import java.util.*;
 public class ArrayListCompare {
