@@ -1,4 +1,4 @@
-//Problem Statement 5:
+//Problem Statement 6:
 //Write a Java program to replace an element in a linked list.
 package lab17November;
 import java.util.*;
