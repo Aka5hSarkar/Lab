@@ -12,6 +12,7 @@ public class Helper {
 			e.printStackTrace();
 		}
 	}
+	//this method creates connection with the MySQL server database
 	public static Connection con()throws SQLException{
 		return DriverManager.getConnection("jdbc:mysql://localhost:3306/mydb", "root", "root");
 	}
