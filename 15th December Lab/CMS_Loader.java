@@ -22,7 +22,7 @@ public class CMS_Loader {
 	public static void register() throws Exception {
 		Connection conn=Helper.con();//creating connection with the MySQL database using helper class
 		Statement stmt=conn.createStatement();//creating statement to execute quaries
-		reg_id=new Random().longs(10000000,99999999).findFirst().getAsLong();//generating 8 digit random number as registration id
+		reg_id=new Random().longs(10000000,99999999).findFirst().getAsLong();//generating 8 digit random number as registration id using Random class
 		ResultSet rs1=stmt.executeQuery("select reg_id from register where reg_id="+reg_id);//checking if the id is already present in the database
 		while(rs1.next()) {
 			reg_id=new Random().longs(10000000,99999999).findFirst().getAsLong();//if its already present then creating another id
