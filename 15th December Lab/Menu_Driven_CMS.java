@@ -6,6 +6,7 @@ public class Menu_Driven_CMS {
 		while (true) {
 			try {
 				CMS_Loader.register();
+				CMS_Loader.login();
 			} catch (Exception e) {
 				System.out.println(e.getMessage());
 			}
