@@ -96,19 +96,32 @@ public class CMS_Loader {
 				throw new IncorrectPasswordException("Incorrect Password");
 			} else {
 				System.out.println("You have successfully logged in...");
-				System.out.println("[1->Admission to new Course],[2-->My Course],"
-						+ "[3->Display all details],[4->Change Details],[5->Change Password]");
-				int choice = sc.nextInt();
-				while (choice<1 || choice>5) {
-					System.out.println("Invalid choice...\nTry again : ");
-					choice = sc.nextInt();
-				}
-				switch(choice) {
-				case 1:admission(reg_id);break;
-				case 2:System.out.println("You are currently enrolled in : "+myCourse(reg_id)+" course.");break;
-				case 3:displayData(reg_id);break;
-				case 4:update(reg_id);break;
-				case 5:changePassword(reg_id);
+				while(true) {
+					System.out.println("[1->Admission to new Course],[2-->My Course],"
+							+ "[3->Display all details],[4->Change Details],[5->Change Password],"
+							+ "[0->Log Out]");
+					int choice = sc.nextInt();
+					while (choice<0 || choice>5) {
+						System.out.println("Invalid choice...\nTry again : ");
+						choice = sc.nextInt();
+					}if(choice==0) {
+						break;
+					}
+					switch(choice) {
+					case 1:admission(reg_id);break;
+					case 2:System.out.println("You are currently enrolled in : "+myCourse(reg_id)+" course.");break;
+					case 3:displayData(reg_id);break;
+					case 4:update(reg_id);break;
+					case 5:changePassword(reg_id);
+					}
+					System.out.println("[1->Main Menu],[0->Log Out]");
+					choice=sc.nextInt();
+					while(choice<0 && choice>1) {
+						System.out.println("Invalid choice...\nTry again : ");
+						choice=sc.nextInt();
+					}
+					if(choice==1) continue;
+					else break;
 				}
 			}
 		}
@@ -263,9 +276,11 @@ public class CMS_Loader {
 		System.out.println("Enter your current password : ");
 		password=sc.next();
 		ResultSet rs=stmt.executeQuery("select password from register where reg_id="+reg_id);
-		while(!password.equals(rs.getString(1))) {
-			System.out.println("Incorrect Password...\nTry again :");
-			password=sc.next();
+		while(rs.next()) {
+			while(!password.equals(rs.getString(1))) {
+				System.out.println("Incorrect Password...\nTry again :");
+				password=sc.next();
+			}
 		}
 		System.out.println("Enter New Password : "
 				+ "\n(Note : you must follow these rules while creating the password : "
