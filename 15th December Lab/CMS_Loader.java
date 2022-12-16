@@ -9,39 +9,42 @@ import java.time.Year;
 import java.util.*;
 import java.util.regex.Pattern;
 import com.bms.Helper;
-
+//custom exception class for duplicate password 
 class DuplicatePasswordException extends Exception {
 	DuplicatePasswordException(String str) {
 		super(str);
 	}
 }
-
+//custom exception class for Registration id not present
 class RegistrationNotFoundException extends Exception {
 	RegistrationNotFoundException(String str) {
 		super(str);
 	}
 }
-
+//custom exception class for incorrect password
 class IncorrectPasswordException extends Exception {
 	public IncorrectPasswordException(String str) {
 		super(str);
 	}
 }
+//custom exception for invalid marks
 class InvalidMarksException extends Exception{
 	InvalidMarksException(String str){
 		super(str);
 	}
 }
 public class CMS_Loader {
+	//instance variables and scanner object
 	static Scanner sc = new Scanner(System.in);
 	static long reg_id,ph_no;
 	static String password,fname,lname,address,course;
 	static double tenthMarks,twelvethMarks;
 	static int yop;
+	//this method is for registration and creating new account
 	public static void register() throws Exception {
 		Connection conn = Helper.con();
 		Statement stmt = conn.createStatement();
-		reg_id = new Random().longs(10000000, 99999999).findFirst().getAsLong();
+		reg_id = new Random().longs(10000000, 99999999).findFirst().getAsLong();//generating 8 digit random number Random class
 		ResultSet rs1 = stmt.executeQuery("select reg_id from register where reg_id=" + reg_id);
 		while (rs1.next()) {
 			reg_id = new Random().longs(10000000, 99999999).findFirst().getAsLong();
